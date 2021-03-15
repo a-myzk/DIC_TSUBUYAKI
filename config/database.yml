@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+development:
+  <<: *default
+  database: DIC_TSUBUYAKI_development
+test:
+  <<: *default
+  database: DIC_TSUBUYAKI_test
+production:
+  <<: *default
+  database: DIC_TSUBUYAKI_production
+  username: DIC_TSUBUYAKI
+  password: <%= ENV['DIC_TSUBUYAKI_DATABASE_PASSWORD'] %>

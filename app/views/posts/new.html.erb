@@ -1,0 +1,9 @@
+<h1>TSUBUYAKI</h1>
+<%= form_with(model: @post, local: true) do |form| %>
+  <div class="post_content">
+    <%= form.label :content %><br>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit "つぶやく" %>
+<% end %>
+<%= link_to 'トップページ', posts_path %>
