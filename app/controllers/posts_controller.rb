@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def home
-    @posts = Post.all
+    @post = Post.all.order(created_at: :desc)
   end
   def new
     @post = Post.new
