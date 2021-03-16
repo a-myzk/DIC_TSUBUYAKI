@@ -1,16 +1,16 @@
-<h1>TSUBUYAKI</h1>
-<p><%= notice %></p>
-<%= link_to "新規投稿する", new_post_path %>
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
-<% @post.each do |post| %>
-  <tr>
-    <td><%= post.content %></td>
-    <td><%= link_to "編集", edit_post_path(post.id) %></td>
-    <td><%= link_to "削除", post_path(post.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %></td>
-  </tr>
-<% end %>
-</table>
+<div class="top_page">
+  <h1>TSUBUYAKI</h1>
+  <p><%= notice %></p>
+  <%= link_to "新規投稿する", new_post_path %>
+  <table class="top_content">
+  <% @post.each do |post| %>
+    <tr class="post_content">
+      <td><%= post.content %></td>
+      <td><%= link_to "編集", edit_post_path(post.id) %></td>
+      <td><%= link_to "削除", post_path(post.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
 
